@@ -2,15 +2,15 @@
 %global __os_install_post %(echo '%{__os_install_post}' | sed -e 's!/usr/lib[^[:space:]]*/brp-python-bytecompile[[:space:]].*$!!g')
 
 Name:           turbo-crl
-Version:        1.0.0
+Version:        1.0.1
 Release:        1%{?dist}
 Summary:        A tool for downloading CRLs
 Group:          Applications/Internet
 License:        GPLv3
 URL:            https://github.com/sfayer/turbo-crl
-Source0:        https://raw.github.com/sfayer/turbo-crl/v1_0_0/turbo-crl.py
-Source1:        https://raw.github.com/sfayer/turbo-crl/v1_0_0/turbo-crl.cron
-Source2:        https://raw.github.com/sfayer/turbo-crl/v1_0_0/README
+Source0:        https://raw.github.com/sfayer/turbo-crl/v1_0_1/turbo-crl.py
+Source1:        https://raw.github.com/sfayer/turbo-crl/v1_0_1/turbo-crl.cron
+Source2:        https://raw.github.com/sfayer/turbo-crl/v1_0_1/README
 BuildArch:      noarch
 BuildRoot:      %(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 Requires:       openssl python
@@ -47,6 +47,9 @@ rm -rf %{buildroot}
 %doc README
 
 %changelog
+* Tue Jul 02 2013 Simon Fayer <sf105@ic.ac.uk> - 1.0.1-1
+- Nothing yet!
+
 * Tue Jul 02 2013 Simon Fayer <sf105@ic.ac.uk> - 1.0.0-1
 - Initial version.
 
