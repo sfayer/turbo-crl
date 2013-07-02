@@ -1,0 +1,53 @@
+Turbo-CRL Readme
+----------------
+
+Turbo-CRL is a tool for fetching revocation lists for a given collection of
+certificates (in openssl 'hashdir' format). Turbo-CRL is GPLv3 licensed, see
+COPYING for details.
+
+** This tool is provided with no warranty what-so-ever, implied or otherwise. **
+
+
+Installation
+------------
+
+The installation should be fairly straight forward, on RHEL you need the
+following packages installed, they can all be found in the base repos.
+
+- openssl
+- python
+
+Just copy the turbo-crl.py to a suitable binary directory (like /usr/bin) or
+build the spec file and install the RPM.
+
+
+Usage
+-----
+
+You can run turbo-crl.py manually just by providing a certificate directory as
+the only argument:
+
+turbo-crl.py /etc/grid-security/certificates
+
+It is also possible to run Turbo-CRL using cron, this should simply be a case
+of copying the example turbo-crl.cron to /etc/cron.d, customising it as
+necessary.
+
+See "turbo-crl.py --help" (or just read the source) for a full list of options.
+
+
+Bugs
+----
+
+There are certainly many bugs. Please send any bug reports to sf105@ic.ac.uk
+with a subject starting "TCRL Bug", remembering to include as much detail as
+possible.
+
+
+Uninstallation
+--------------
+
+If for any reason you want to return to using other tools, you simply need to
+remove all of the .r0 files and .r0 symlinks from your certificate directory.
+This can be easily achieved by doing an "rm -f *.r0".
+
