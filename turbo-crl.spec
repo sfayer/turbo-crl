@@ -25,7 +25,7 @@ cp %{SOURCE2} README
 %build
 
 %install
-rm -Rf $RPM_BUILD_ROOT
+rm -Rf %{buildroot}
 # Install binary
 mkdir -p %{buildroot}%{_bindir}
 cp %{SOURCE0} %{buildroot}%{_bindir}/turbo-crl.py
