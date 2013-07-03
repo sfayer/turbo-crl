@@ -31,7 +31,7 @@ turbo-crl.py /etc/grid-security/certificates
 
 It is also possible to run Turbo-CRL using cron, this should simply be a case
 of copying the example turbo-crl.cron to /etc/cron.d, customising it as
-necessary.
+necessary. The RPM will automatically install this cron job for you.
 
 See "turbo-crl.py --help" (or just read the source) for a full list of options.
 
