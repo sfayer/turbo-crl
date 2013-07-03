@@ -126,6 +126,9 @@ class TCRL:
         # Success, CRL written, don't try any more URLs
         error = None
         break
+      except KeyboardInterrupt:
+        # Just forward interrupts up the stack
+        raise
       except Exception, err:
         error = "Failed to fetch %s: %s" % (ca_name, str(err))
         if debug:
@@ -230,14 +233,18 @@ if __name__ == "__main__":
       print "Waiting %d seconds (out of a max of %d)." % (real_delay, delay)
     time.sleep(real_delay)
 
-  # Download the CRLs
-  if debug:
-    print "Fetching CRLs..."
-  TCRL.process_crls(cert_dir, debug)
-  # Create any missing "hash-symlinks" to the CRLs
-  if debug:
-    print "Fixing CRL symlinks..."
-  TCRL.fix_links(cert_dir, debug)
+  try:
+    # Download the CRLs
+    if debug:
+      print "Fetching CRLs..."
+    TCRL.process_crls(cert_dir, debug)
+    # Create any missing "hash-symlinks" to the CRLs
+    if debug:
+      print "Fixing CRL symlinks..."
+    TCRL.fix_links(cert_dir, debug)
+  except KeyboardInterrupt:
+    if debug:
+      print "Exiting on user request."
   # Mission complete.
   sys.exit(0)
 
