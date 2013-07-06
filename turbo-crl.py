@@ -15,7 +15,7 @@
 #
 # Turbo-CRL -- A tool for fetching CRL lists.
 #
-TCRL_VER = "Turbo-CRL v1.0.1"
+TCRL_VER = "Turbo-CRL v1.0.2a (development version)"
 
 import os
 import sys
