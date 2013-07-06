@@ -1,4 +1,4 @@
-v1.0.1 - Not relased yet.
+v1.0.1 - 06/07/2013
  - Fixed ctrl+c handling.
  - Write to a log file from cron by default.
 

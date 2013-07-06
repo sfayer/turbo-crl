@@ -49,6 +49,7 @@ rm -rf %{buildroot}
 %changelog
 * Tue Jul 02 2013 Simon Fayer <sf105@ic.ac.uk> - 1.0.1-1
 - Fixed Ctrl+C handling.
+- Write to a log file from cron by default.
 
 * Tue Jul 02 2013 Simon Fayer <sf105@ic.ac.uk> - 1.0.0-1
 - Initial version.
