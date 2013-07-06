@@ -1,5 +1,6 @@
 v1.0.1 - Not relased yet.
  - Fixed ctrl+c handling.
+ - Write to a log file from cron by default.
 
 v1.0.0 - 02/07/2013
  - Initial release.
